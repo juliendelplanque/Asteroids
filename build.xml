@@ -2,7 +2,10 @@
 
     <target name="build">
         <mkdir dir="build" />
-        <javac srcdir="src/be/ac/umons/asteroids/" destdir="build" includeantruntime="false" classpath="code/be/ac/umons/asteroids/test/junit-4.11.jar"/>
+        <javac srcdir="src/be/ac/umons/asteroids/" destdir="build" includeantruntime="false" classpath="code/be/ac/umons/asteroids/test/junit-4.11.jar">
+            <compilerarg value="-Xlint:unchecked" />
+            <compilerarg value="-Xlint:deprecation" />
+        </javac>
         <mkdir dir="build/be/ac/umons/asteroids/resources" />
         <copy todir="build/be/ac/umons/asteroids/resources" >
             <fileset dir="src/be/ac/umons/asteroids/resources" />
