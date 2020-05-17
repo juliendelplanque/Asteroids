@@ -1,0 +1,32 @@
+<project name="Asteroids">
+
+    <target name="build">
+        <mkdir dir="build" />
+        <javac srcdir="src/be/ac/umons/asteroids/" destdir="build" includeantruntime="false" classpath="code/be/ac/umons/asteroids/test/junit-4.11.jar"/>
+        <mkdir dir="build/be/ac/umons/asteroids/resources" />
+        <copy todir="build/be/ac/umons/asteroids/resources" >
+            <fileset dir="src/be/ac/umons/asteroids/resources" />
+        </copy>
+    </target>
+    
+    <target name="clear">
+        <delete dir="build" />
+    </target>
+    
+    <target name="run">
+        <java classname="be.ac.umons.asteroids.Main" classpath="build" fork="true" />
+    </target>
+    
+    <target name="jar" depends="build">
+        <jar destfile="Asteroids.jar" basedir="build" manifest="misc/MANIFEST.txt" compress="false" />
+    </target>
+    
+    
+    <target name="test" depends="build">
+        <java classname="be.ac.umons.asteroids.test.MTest" classpath="build" fork="true" />
+    </target> 
+    
+
+
+
+</project>

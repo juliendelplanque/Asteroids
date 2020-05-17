@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Giammello Alessandro - Delplanque Julien
+Main-Class: be.ac.umons.asteroids.Main
+
